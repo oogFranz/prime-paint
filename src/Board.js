@@ -21,6 +21,7 @@ export default class Board extends Component {
   renderSquare(i, j) {
     return (
       <Square
+        key={i.toString() + j.toString()}
         value={this.state.squares[i][j]}
         onClick={() => this.handleClick(i, j)}
       />
@@ -32,7 +33,11 @@ export default class Board extends Component {
     for (let i = 0; i < this.props.column; i++) {
       columns.push(this.renderSquare(i, row));
     }
-    return <div className="board-row">{columns}</div>;
+    return (
+      <div key={row.toString()} className="board-row">
+        {columns}
+      </div>
+    );
   }
 
   render() {
