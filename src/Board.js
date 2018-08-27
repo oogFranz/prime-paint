@@ -4,7 +4,9 @@ import Square from "./Square";
 export default class Board extends Component {
   constructor(props) {
     super(props);
-    const squares = Array.from(new Array(4), () => new Array(4).fill(0));
+    const squares = Array.from(new Array(this.props.column), () =>
+      new Array(this.props.row).fill(0)
+    );
     this.state = {
       squares: squares,
     };
@@ -26,24 +28,18 @@ export default class Board extends Component {
   }
 
   renderRow(row) {
-    return (
-      <div className="board-row">
-        {this.renderSquare(0, row)}
-        {this.renderSquare(1, row)}
-        {this.renderSquare(2, row)}
-        {this.renderSquare(3, row)}
-      </div>
-    );
+    const columns = [];
+    for (let i = 0; i < this.props.column; i++) {
+      columns.push(this.renderSquare(i, row));
+    }
+    return <div className="board-row">{columns}</div>;
   }
 
   render() {
-    return (
-      <div className="Board">
-        {this.renderRow(0)}
-        {this.renderRow(1)}
-        {this.renderRow(2)}
-        {this.renderRow(3)}
-      </div>
-    );
+    const rows = [];
+    for (let i = 0; i < this.props.row; i++) {
+      rows.push(this.renderRow(i));
+    }
+    return <div className="Board">{rows}</div>;
   }
 }
