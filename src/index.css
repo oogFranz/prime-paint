@@ -5,7 +5,6 @@ body {
 }
 
 .square {
-  background: #fff;
   border: 1px solid #999;
   float: left;
   font-size: 18px;
@@ -16,6 +15,23 @@ body {
   padding: 0;
   text-align: center;
   width: 34px;
+  outline: none;
+}
+
+.white {
+  background: #fff;
+}
+
+.red {
+  background: #f00;
+}
+
+.green {
+  background: #0f0;
+}
+
+.blue {
+  background: #00f;
 }
 
 .board-row:after {

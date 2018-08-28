@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import Square from "./Square";
+import Color from "./Color";
 
 export default class Board extends Component {
   constructor(props) {
     super(props);
     const squares = Array.from(new Array(this.props.column), () =>
-      new Array(this.props.row).fill(0)
+      new Array(this.props.row).fill(new Color())
     );
     this.state = {
       squares: squares,
@@ -14,7 +15,7 @@ export default class Board extends Component {
 
   handleClick(i, j) {
     const squares = this.state.squares.slice();
-    squares[i][j] += 1;
+    squares[i][j] = squares[i][j].next();
     this.setState({ squares: squares });
   }
 
