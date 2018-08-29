@@ -3,19 +3,23 @@ export default class Color {
     return ["white", "red", "green", "blue"];
   }
 
-  constructor(value = 0) {
-    this.value = value;
+  constructor(colorName = "white") {
+    this.colorName = "white";
+    if (Color.COLOR.includes(colorName)) {
+      this.colorName = colorName;
+    }
   }
 
   next() {
-    let newValue = this.value + 1;
-    if (newValue > Color.COLOR.length) {
-      newValue %= Color.COLOR.length;
+    const colors = Color.COLOR;
+    let newIndex = colors.indexOf(this.colorName) + 1;
+    if (newIndex >= colors.length) {
+      newIndex %= colors.length;
     }
-    return new Color(newValue);
+    return new Color(colors[newIndex]);
   }
 
   getColorName() {
-    return Color.COLOR[this.value];
+    return this.colorName;
   }
 }

@@ -23,7 +23,7 @@ export default class Board extends Component {
     return (
       <Square
         key={i.toString() + j.toString()}
-        value={this.state.squares[i][j]}
+        color={this.state.squares[i][j]}
         onClick={() => this.handleClick(i, j)}
       />
     );
