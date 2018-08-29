@@ -1,7 +1,23 @@
 body {
-  margin: 20;
+  margin: 20px;
   padding: 0;
   font-family: sans-serif;
+}
+
+.palette {
+  margin-top: 10px;
+}
+
+.circle {
+  border: 1px solid;
+  float: left;
+  line-height: 34px;
+  height: 34px;
+  margin: 0;
+  padding: 0;
+  width: 34px;
+  border-radius: 50%;
+  outline: none;
 }
 
 .square {
