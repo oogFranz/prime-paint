@@ -10,14 +10,18 @@ export default class Palette extends Component {
     };
   }
 
-  handleClick(colorName) {}
+  handleClick(colorName) {
+    this.setState({ selected: colorName });
+  }
 
   renderCircle(colorName) {
+    const selected = colorName === this.state.selected;
     return (
       <Circle
         key={"palette" + colorName}
         color={new Color(colorName)}
-        onClick={() => this.handleClick()}
+        selected={selected}
+        onClick={() => this.handleClick(colorName)}
       />
     );
   }
