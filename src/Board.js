@@ -7,7 +7,7 @@ export default class Board extends Component {
       <Square
         key={i.toString() + j.toString()}
         color={this.props.squares[i][j]}
-        onClick={() => this.props.onClick(i, j)}
+        onMouseDown={() => this.props.onMouseDown(i, j)}
       />
     );
   }

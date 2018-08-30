@@ -4,7 +4,7 @@ export default function Square(props) {
   return (
     <button
       className={["square", props.color.getColorName()].join(" ")}
-      onClick={props.onClick}
+      onMouseDown={props.onMouseDown}
     />
   );
 }

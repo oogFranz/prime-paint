@@ -15,7 +15,7 @@ export default class Paint extends Component {
     };
   }
 
-  handleBoardClick(i, j) {
+  handleBoardMouseDown(i, j) {
     const squares = this.state.squares.slice();
     squares[i][j] = new Color(this.state.selected);
     this.setState({ squares: squares });
@@ -32,7 +32,7 @@ export default class Paint extends Component {
           column={this.props.column}
           row={this.props.row}
           squares={this.state.squares}
-          onClick={(i, j) => this.handleBoardClick(i, j)}
+          onMouseDown={(i, j) => this.handleBoardMouseDown(i, j)}
         />
         <Palette
           selected={this.state.selected}
