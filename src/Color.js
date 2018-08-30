@@ -4,19 +4,7 @@ export default class Color {
   }
 
   constructor(colorName = "white") {
-    this.colorName = "white";
-    if (Color.COLOR.includes(colorName)) {
-      this.colorName = colorName;
-    }
-  }
-
-  next() {
-    const colors = Color.COLOR;
-    let newIndex = colors.indexOf(this.colorName) + 1;
-    if (newIndex >= colors.length) {
-      newIndex %= colors.length;
-    }
-    return new Color(colors[newIndex]);
+    this.colorName = Color.COLOR.includes(colorName) ? colorName : "white";
   }
 
   getColorName() {

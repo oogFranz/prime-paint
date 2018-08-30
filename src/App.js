@@ -1,13 +1,11 @@
 import React, { Component } from "react";
-import Board from "./Board";
-import Palette from "./Palette";
+import Paint from "./Paint";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Board column={5} row={4} />
-        <Palette />
+        <Paint column={5} row={4} />
       </div>
     );
   }

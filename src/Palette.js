@@ -3,25 +3,14 @@ import Circle from "./Circle";
 import Color from "./Color";
 
 export default class Palette extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      selected: null,
-    };
-  }
-
-  handleClick(colorName) {
-    this.setState({ selected: colorName });
-  }
-
   renderCircle(colorName) {
-    const selected = colorName === this.state.selected;
+    const selected = colorName === this.props.selected;
     return (
       <Circle
         key={"palette" + colorName}
         color={new Color(colorName)}
         selected={selected}
-        onClick={() => this.handleClick(colorName)}
+        onClick={() => this.props.onClick(colorName)}
       />
     );
   }
