@@ -54,8 +54,11 @@ body {
   background: #00f;
 }
 
-.board-row:after {
-  clear: both;
-  content: "";
-  display: table;
+.board {
+  display: inline-block;
+  padding: 20px;
+}
+
+.palette {
+  padding-left: 20px;
 }

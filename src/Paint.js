@@ -12,13 +12,29 @@ export default class Paint extends Component {
     this.state = {
       squares: squares,
       selected: "white",
+      isMouseDown: false,
     };
   }
 
   handleBoardMouseDown(i, j) {
+    this.setState({ isMouseDown: true });
+    this.draw(i, j);
+  }
+
+  draw(i, j) {
     const squares = this.state.squares.slice();
     squares[i][j] = new Color(this.state.selected);
     this.setState({ squares: squares });
+  }
+
+  handleMouseEnter(i, j) {
+    if (this.state.isMouseDown) {
+      this.draw(i, j);
+    }
+  }
+
+  handleMouseOut() {
+    this.setState({ isMouseDown: false });
   }
 
   handlePaletteClick(colorName) {
@@ -33,6 +49,8 @@ export default class Paint extends Component {
           row={this.props.row}
           squares={this.state.squares}
           onMouseDown={(i, j) => this.handleBoardMouseDown(i, j)}
+          onMouseEnter={(i, j) => this.handleMouseEnter(i, j)}
+          mouseOut={this.handleMouseOut.bind(this)}
         />
         <Palette
           selected={this.state.selected}

@@ -8,6 +8,7 @@ export default class Board extends Component {
         key={i.toString() + j.toString()}
         color={this.props.squares[i][j]}
         onMouseDown={() => this.props.onMouseDown(i, j)}
+        onMouseEnter={() => this.props.onMouseEnter(i, j)}
       />
     );
   }
@@ -29,6 +30,14 @@ export default class Board extends Component {
     for (let i = 0; i < this.props.row; i++) {
       rows.push(this.renderRow(i));
     }
-    return <div className="Board">{rows}</div>;
+    return (
+      <div
+        className="board"
+        onMouseUp={this.props.mouseOut}
+        onMouseLeave={this.props.mouseOut}
+      >
+        {rows}
+      </div>
+    );
   }
 }
