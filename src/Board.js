@@ -15,7 +15,7 @@ export default class Board extends Component {
 
   renderRow(row) {
     const columns = [];
-    for (let i = 0; i < this.props.column; i++) {
+    for (let i = 0; i < this.props.size; i++) {
       columns.push(this.renderSquare(i, row));
     }
     return (
@@ -27,7 +27,7 @@ export default class Board extends Component {
 
   render() {
     const rows = [];
-    for (let i = 0; i < this.props.row; i++) {
+    for (let i = 0; i < this.props.size; i++) {
       rows.push(this.renderRow(i));
     }
     return (

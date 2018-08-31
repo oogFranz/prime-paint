@@ -5,7 +5,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Paint column={16} row={16} />
+        <Paint size={16} />
       </div>
     );
   }

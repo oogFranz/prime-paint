@@ -6,8 +6,8 @@ import Color from "./Color";
 export default class Paint extends Component {
   constructor(props) {
     super(props);
-    const squares = Array.from(new Array(this.props.column), () =>
-      new Array(this.props.row).fill(new Color())
+    const squares = Array.from(new Array(this.props.size), () =>
+      new Array(this.props.size).fill(new Color())
     );
     this.state = {
       squares: squares,
@@ -45,8 +45,7 @@ export default class Paint extends Component {
     return (
       <div className="Paint">
         <Board
-          column={this.props.column}
-          row={this.props.row}
+          size={this.props.size}
           squares={this.state.squares}
           onMouseDown={(i, j) => this.handleBoardMouseDown(i, j)}
           onMouseEnter={(i, j) => this.handleMouseEnter(i, j)}
