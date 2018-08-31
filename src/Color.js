@@ -1,6 +1,6 @@
 export default class Color {
   static get COLOR() {
-    return ["white", "red", "green", "blue"];
+    return ["white", "red", "green", "blue", "black"];
   }
 
   constructor(colorName = "white") {

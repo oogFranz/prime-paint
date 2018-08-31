@@ -35,19 +35,23 @@ body {
 }
 
 .white {
-  background: #fff;
+  background: white;
 }
 
 .red {
-  background: #f00;
+  background: red;
 }
 
 .green {
-  background: #0f0;
+  background: green;
 }
 
 .blue {
-  background: #00f;
+  background: blue;
+}
+
+.black {
+  background: black;
 }
 
 .board {
