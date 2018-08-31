@@ -5,7 +5,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Paint column={5} row={4} />
+        <Paint column={16} row={16} />
       </div>
     );
   }
