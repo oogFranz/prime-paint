@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Board from "./Board";
 import Palette from "./Palette";
-import Color from "./Color";
+import Color from "../Color";
 
 export default class Paint extends Component {
   constructor(props) {

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Circle from "./Circle";
-import Color from "./Color";
+import Color from "../Color";
 
 export default class Palette extends Component {
   renderCircle(colorName) {
